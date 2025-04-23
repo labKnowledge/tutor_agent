@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "0a63e9f7-b2e4-46d7-8a73-93e7dfa5d711",
+		"name": "Tutor Agent A2A API",
+		"description": "Postman collection for testing the Tutor Agent A2A API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Agent Card",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:10012/.well-known/agent.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10012",
+					"path": [
+						".well-known",
+						"agent.json"
+					]
+				},
+				"description": "Retrieve the agent card metadata"
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Learning Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"request-1\",\n  \"method\": \"tasks/send\",\n  \"params\": {\n    \"id\": \"task-123\",\n    \"sessionId\": \"session-456\",\n    \"acceptedOutputModes\": [\"text/plain\"],\n    \"message\": {\n      \"role\": \"user\",\n      \"parts\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"Topic: Machine Learning\\nBackground: I have basic Python programming skills but no ML experience\\nGoals: To understand and implement basic ML algorithms\"\n        }\n      ]\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:10012",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10012",
+					"path": [
+						"rpc"
+					]
+				},
+				"description": "Submit a learning assessment task to the tutor agent"
+			},
+			"response": []
+		},
+		{
+			"name": "Simple Learning Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"simple-request\",\n  \"method\": \"tasks/send\",\n  \"params\": {\n    \"id\": \"task-simple\",\n    \"sessionId\": \"session-simple\",\n    \"acceptedOutputModes\": [\"text/plain\"],\n    \"message\": {\n      \"role\": \"user\",\n      \"parts\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"Topic: Math\\nBackground: High school level\\nGoals: Learn calculus\"\n        }\n      ]\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:10012",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10012",
+					"path": [
+						"rpc"
+					]
+				},
+				"description": "Submit a simpler learning task"
+			},
+			"response": []
+		}
+	]
+} 

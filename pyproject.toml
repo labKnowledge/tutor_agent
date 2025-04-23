@@ -1,0 +1,13 @@
+[project]
+name = "tutor"
+version = "0.1.0"
+description = "An AI tutor agent built with CrewAI that identifies learning gaps and creates personalized learning plans. Features Google Gemini integration and A2A protocol compatibility for agent interoperability."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ai-agent2agent>=0.1.0",
+    "crewai[tools]>=0.11.2",
+    "duckduckgo-search>=5.0.0",
+    "google-genai>=1.9.0",
+]
+
