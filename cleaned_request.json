@@ -1,19 +1,19 @@
 {
-  "jsonrpc": "2.0",
-  "id": "request-1",
-  "method": "tasks/send",
-  "params": {
-    "id": "task-123",
-    "sessionId": "session-456",
-    "acceptedOutputModes": ["text/plain"],
-    "message": {
-      "role": "user",
-      "parts": [
-        {
-          "type": "text",
-          "text": "Topic: Machine Learning\nBackground: I have basic Python programming skills but no ML experience\nGoals: To understand and implement basic ML algorithms"
-        }
-      ]
+    "jsonrpc": "2.0",
+    "id": "request-1",
+    "method": "tasks/send",
+    "params": {
+      "id": "t98765567893",
+      "sessionId": "8765434567896",
+      "acceptedOutputModes": ["text/plain"],
+      "message": {
+        "role": "user",
+        "parts": [
+          {
+            "type": "text",
+            "text": "Topic: Machine Learning\nBackground: I have basic Python programming skills but no ML experience\nGoals: To understand and implement basic ML algorithms"
+          }
+        ]
+      }
     }
   }
-} 
