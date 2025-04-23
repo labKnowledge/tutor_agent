@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 @click.command()
 @click.option("--host", "host", default="localhost")
-@click.option("--port", "port", default=10012)
+@click.option("--port", "port", default=8088)
 def main(host, port):
     """Entry point for the A2A + CrewAI Tutor Agent sample."""
     try:
